@@ -5,6 +5,7 @@ import Header from './components/header';
 import Home from './components/home'
 import Menu from './components/menu';
 import Contact from './components/contact';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </Switch>
           </div>
         </div>
+        <Footer />
       </div>
     </Router>
     </div>

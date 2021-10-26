@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import cheeseMoon from '../assets/cheeseMoon.PNG';
 
@@ -13,13 +13,14 @@ const Heading = styled.div`
   .logo{
     text-decoration: none;
     color: #EDB34D;
-    font-size: 3rem;
   }
 `
 
 const CheeseMoon = styled.div`
   max-width: 30%;
   max-height: 20vh;
+  display: flex;
+  justify-content: left;
   img{
     height: 100%;
   }
@@ -31,11 +32,20 @@ const CheeseMoon = styled.div`
   }
 `
 
-const HeadWrap = styled.div`
+const LogoWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: right;
+  align-items: center;
   width: 95%;
+  font-size: 8.5vw;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+  @media (max-width: 450px) {
+    justify-content: center;
+    .logo{
+      font-size: 2%.5rem;
+    }
+  }
 `
 
 const NavBar = styled.div`
@@ -47,7 +57,7 @@ const NavBar = styled.div`
   .nav {
     margin-left: 5%;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 4.5vw;
     font-weight: bold;
     color: #EDB34D;
     transition: .3s;
@@ -57,8 +67,11 @@ const NavBar = styled.div`
     }
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 450px) {
     flex-direction: column;
+    .nav{
+      font-size: 1.5rem;
+    }
   }
 `
 
@@ -69,9 +82,9 @@ function Header(){
               <img src={cheeseMoon} alt="cheesy-moon" />
             </CheeseMoon>
             <Heading>
-                <HeadWrap>
+                <LogoWrap>
                     <Link className='logo' to='/'>Midnight Snax</Link>
-                </HeadWrap>
+                </LogoWrap>
                 <NavBar>
                     <Link className="nav" to='/'>Home</Link>
                     <Link className="nav" to='/Menu'>Menu</Link>
