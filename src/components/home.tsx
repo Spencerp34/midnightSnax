@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 const HomeDiv = styled.div`
     h2{
-        font-size: 2.5rem;
+        font-size: 5.5vw;
+    }
+
+    h3{
+        font-size: 4.5vw;
     }
 
     .pizza{
@@ -22,6 +26,10 @@ const HomeDiv = styled.div`
     }
     #pizzaText{
         color: #2D5578;
+        background-color: black;
+        width: 50%;
+        text-align: center;
+        border-radius: 5px;
         font-size: 2.5vw;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         position: absolute;
@@ -35,6 +43,7 @@ const HomeDiv = styled.div`
         padding: 5px;
         border-radius: 7px;
         transition: 0.3s;
+        font-size: 5vw;
         :hover{
             background-color: #2D5578;
             color: #EDB34D;

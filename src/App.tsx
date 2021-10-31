@@ -11,9 +11,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <div className="App">
+        <Header/>
         <div className='margined'>
-          <Header/>
           <div className='content'>
             <Switch>
                 <Route path='/Menu' component={Menu} />
@@ -23,7 +22,6 @@ function App() {
           </div>
         </div>
         <Footer />
-      </div>
     </Router>
     </div>
   );

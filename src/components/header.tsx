@@ -8,7 +8,7 @@ const Heading = styled.div`
   justify-content: right;
   flex-direction: column;
   margin-bottom: 5%;
-  width: 80%;
+  width: 85%;
 
   .logo{
     text-decoration: none;
@@ -16,21 +16,6 @@ const Heading = styled.div`
   }
 `
 
-const CheeseMoon = styled.div`
-  max-width: 30%;
-  max-height: 20vh;
-  display: flex;
-  justify-content: left;
-  img{
-    height: 100%;
-  }
-
-  @media (max-width: 450px) {
-    img{
-      max-height: 10vh;
-    }
-  }
-`
 
 const LogoWrap = styled.div`
   display: flex;
@@ -46,7 +31,29 @@ const LogoWrap = styled.div`
       font-size: 2%.5rem;
     }
   }
+
+  .logoWrap{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  `
+
+const CheeseMoon = styled.div`
+  width: 20%;
+  max-height: 20vh;
+  display: flex;
+  justify-content: left;
+  #cheesy-moon{
+    height: 20vw;
+    object-fit: cover;
+    margin-right: 5vw;
+  }
+
+  @media (max-width: 450px) {
+    
+  }
 `
+
 
 const NavBar = styled.div`
   display: flex;
@@ -66,7 +73,7 @@ const NavBar = styled.div`
       font-weight: bold;
     }
   }
-
+  
   @media (max-width: 450px) {
     flex-direction: column;
     .nav{
@@ -78,12 +85,16 @@ const NavBar = styled.div`
 function Header(){
     return(
         <header>
-            <CheeseMoon>
-              <img src={cheeseMoon} alt="cheesy-moon" />
-            </CheeseMoon>
+            
             <Heading>
                 <LogoWrap>
-                    <Link className='logo' to='/'>Midnight Snax</Link>
+                    <div className='logoWrap'>
+                      <CheeseMoon>
+                        <img src={cheeseMoon} id='cheesy-moon' alt="cheesy-moon" />
+                      </CheeseMoon>
+                      <Link className='logo' to='/'>Midnight Snax</Link>
+                    </div>
+                    
                 </LogoWrap>
                 <NavBar>
                     <Link className="nav" to='/'>Home</Link>
