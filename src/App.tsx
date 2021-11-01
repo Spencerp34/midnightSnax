@@ -5,14 +5,14 @@ import Header from './components/header';
 import Home from './components/home'
 import Menu from './components/menu';
 import Contact from './components/contact';
+import Footer from './components/footer';
 
 function App() {
   return (
     <div className="App">
       <Router>
-      <div className="App">
+        <Header/>
         <div className='margined'>
-          <Header/>
           <div className='content'>
             <Switch>
                 <Route path='/Menu' component={Menu} />
@@ -21,7 +21,7 @@ function App() {
             </Switch>
           </div>
         </div>
-      </div>
+        <Footer />
     </Router>
     </div>
   );
