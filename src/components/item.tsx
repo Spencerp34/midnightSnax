@@ -12,7 +12,7 @@ const ItemDiv = styled.div`
     background-color: rgba(66, 69, 75, 0.7);
     border-radius: 5px;
     padding: 5px;
-    min-height: 50vh;
+    min-height: 30vw;
     margin-top: 5vh;
     transition: 0.3s;
 
@@ -37,6 +37,14 @@ const ItemDiv = styled.div`
 
     .allergy{
         height: 3vw;
+    }
+    h6{
+        font-size: 1vw;
+    }
+    @media (max-width: 700px) {
+        .item-img{
+            width: 35vw;
+        }
     }
 `
 
