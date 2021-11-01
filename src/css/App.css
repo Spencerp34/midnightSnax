@@ -27,6 +27,10 @@ header{
   justify-content: center;
 }
 
+.content{
+  width: 100%;
+}
+
 @media (max-width: 450px) {
   header{
     flex-direction: column;
