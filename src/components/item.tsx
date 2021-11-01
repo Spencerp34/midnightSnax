@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import glutenIcon from '../assets/glutenIcon.jpg'
 import milkIcon from '../assets/milkIcon.png'
 import peanutIcon from '../assets/peanutIcon.png'
+import { useState } from 'react'
 
 const ItemDiv = styled.div`
     display: flex;
@@ -40,6 +41,7 @@ const ItemDiv = styled.div`
 `
 
 function Item(props: any){
+    const [showInfo, setShowInfo] = useState(false)
     const {item} = props
     const allergies = []
     if(item.dairy === true ){
@@ -51,14 +53,22 @@ function Item(props: any){
     if(item.nuts === true ){
         allergies.push(peanutIcon)
     }
+    const handleClick = () => {
+        setShowInfo(!showInfo)
+    }
 
     return(
-        <div className='item'>
+        <div className='item' onClick={handleClick} >
             <ItemDiv>
                 <h4>{item.title}</h4>
-                <div className='item-img'>
-                    <img src={item.img_url} alt={item.title} />
-                </div>
+                { showInfo ? 
+                    (
+                        <h6>{item.description}</h6>
+                    )
+                    : (<div className='item-img'>
+                        <img src={item.img_url} alt={item.title} />
+                    </div>)
+                }
                 <h5>${item.price}</h5>
                 <div className='allergies'>
                     {allergies.map( icon => (
