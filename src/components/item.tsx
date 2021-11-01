@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import glutenIcon from '../assets/glutenIcon.jpg'
+import milkIcon from '../assets/milkIcon.png'
+import peanutIcon from '../assets/peanutIcon.png'
 
 const ItemDiv = styled.div`
     display: flex;
@@ -10,6 +13,7 @@ const ItemDiv = styled.div`
     padding: 5px;
     min-height: 50vh;
     margin-top: 5vh;
+    transition: 0.3s;
 
     .item-img{
         height: auto;
@@ -24,10 +28,30 @@ const ItemDiv = styled.div`
             object-fit: contain;
         }
     }
+    .allergies{
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .allergy{
+        height: 3vw;
+    }
 `
 
 function Item(props: any){
     const {item} = props
+    const allergies = []
+    if(item.dairy === true ){
+        allergies.push(milkIcon)
+    }
+    if(item.gluten === true ){
+        allergies.push(glutenIcon)
+    }
+    if(item.nuts === true ){
+        allergies.push(peanutIcon)
+    }
+
     return(
         <div className='item'>
             <ItemDiv>
@@ -36,6 +60,11 @@ function Item(props: any){
                     <img src={item.img_url} alt={item.title} />
                 </div>
                 <h5>${item.price}</h5>
+                <div className='allergies'>
+                    {allergies.map( icon => (
+                        <img className='allergy' src={icon} alt='allergy' />
+                    ))}
+                </div>
             </ItemDiv>
         </div>
     )
