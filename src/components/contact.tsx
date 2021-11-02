@@ -11,11 +11,12 @@ const ContactDiv = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 100%;
     }
     form{
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 85%;
         align-items: center;
         justify-content: center;
         border: 2px solid #EDB34D;
@@ -56,7 +57,6 @@ const ContactDiv = styled.div`
             align-items: center;
             padding: 1vw;
             select{
-                width: 50%;
                 height: 2rem;
             }
         }
@@ -64,9 +64,17 @@ const ContactDiv = styled.div`
             padding: 2vw;
         }
         h4{
-            font-size: 3vw;
+            font-size: 4vw;
         }
-
+        input{
+            width: 100%;
+            text-align: center;
+            height: 2rem;
+        }
+        select{
+            width: 100%;
+            text-align: center;
+        }
     }
 `
 
@@ -86,7 +94,7 @@ function Contact(){
         if(formValues.type === "Catering"){
             return (
                 <div className='catering subSection'>
-                    <h4> Catering</h4>
+                    <h4 id='type'> Catering</h4>
                     <div className='info'>
                         <label >Date</label>
                         <input type='date' name='date' value={formValues.date} onChange={handleChange} ></input>
@@ -104,7 +112,7 @@ function Contact(){
         }else if(formValues.type === "Reservations"){
             return (
                 <div className='reservations subSection'>
-                    <h4> Reservations</h4>
+                    <h4 id='type'> Reservations</h4>
                     <div className='info'>
                         <label >Date</label>
                         <input type='date' name='date' value={formValues.date} onChange={handleChange} ></input>
@@ -122,7 +130,7 @@ function Contact(){
         }else if(formValues.type === "Careers"){
             return (
                 <div className='careers subSection'>
-                    <h4> Looking for your next part time job?</h4>
+                    <h4 id='type'> Looking for your next part time job?</h4>
                     <div className='info'>
                         <label >Full name</label>
                         <input type='text' name='name' value={formValues.name} onChange={handleChange} ></input>
@@ -140,7 +148,7 @@ function Contact(){
         }else if(formValues.type === "Concerns"){
             return (
                 <div className='careers subSection'>
-                    <h4> Have any concerns for management?</h4>
+                    <h4 id='type'> Have any concerns for management?</h4>
                     <div className='info'>
                         <label >Full name</label>
                         <input type='text' name='name' value={formValues.name} onChange={handleChange} ></input>
@@ -183,10 +191,7 @@ function Contact(){
                                 <option value="Concerns">Concerns</option>
                             </select>
                         </div>
-                        
                     </div>
-                    
-                    
                     {
                         SpecificForm()
                     }
