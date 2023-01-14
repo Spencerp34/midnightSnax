@@ -78,16 +78,16 @@ function Menu(){
     }
     
     useEffect(() => {
-        axios.get('https://midnight-snax.herokuapp.com/dishes/category/1')
+        axios.get('https://midnightsnaxbe-production.up.railway.app/dishes/category/1')
             .then( res => {
                 setAppetizers(res.data)
         })
-        axios.get('https://midnight-snax.herokuapp.com/dishes/category/2')
+        axios.get('https://midnightsnaxbe-production.up.railway.app/dishes/category/2')
             .then( res => {
                 setMeals(res.data)
                 setSelected(res.data)
         })
-        axios.get('https://midnight-snax.herokuapp.com/dishes/category/3')
+        axios.get('https://midnightsnaxbe-production.up.railway.app/dishes/category/3')
             .then( res => {
                 setDesserts(res.data)
         })
