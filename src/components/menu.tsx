@@ -13,6 +13,7 @@ const MenuDiv = styled.div`
     }
     h2{
         font-size: 5vw;
+        cursor: pointer;
     }
     .categories{
         display: flex;
